@@ -153,16 +153,13 @@ function AnalysisCell({ row, column }: CellProp) {
     return "";
   }
 
-  var cell = [];
-  analysis.map((item) => {
-    cell.push(
-      <>
-        {item}
-        <br />
-      </>
-    );
-  });
-  return cell;
+  return analysis.map((item) => (
+    <div className="block p-1">
+      <span className="items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-blue-100 text-blue-800">
+        {item.analyzer} {console.log(item)}
+      </span>
+    </div>
+  ));
 }
 
 function DateCell({ row, column }: CellProp) {
@@ -196,6 +193,8 @@ export interface Props {
 }
 
 function ConfigList({ data, handleRowClick, isLoading }: Props) {
+  console.log(data);
+
   const [queryParams, setQueryParams] = useSearchParams({
     sortBy: "config_type",
     sortOrder: "asc"
@@ -215,7 +214,7 @@ function ConfigList({ data, handleRowClick, isLoading }: Props) {
     <DataTable
       stickyHead
       columns={columns}
-      data={data}
+      data={data.slice(1, 19)}
       handleRowClick={handleRowClick}
       tableStyle={{ borderSpacing: "0" }}
       isLoading={isLoading}
