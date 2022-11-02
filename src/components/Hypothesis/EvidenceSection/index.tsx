@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { ChevronRightIcon, DotsVerticalIcon } from "@heroicons/react/outline";
-import { LogsTable } from "../../Logs/Table/logs-table";
+import { LogsTable } from "../../Logs/Table/LogsTable";
 import { CardSize, TopologyCard } from "../../TopologyCard";
 import { Icon } from "../../Icon";
 import { Button } from "../../Button";
